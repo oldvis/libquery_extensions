@@ -4,7 +4,7 @@ The type declarations specific to the `Telefact` data source.
 
 from typing import TypedDict
 
-from libquery.typing import MetadataEntry as BaseMetadataEntry
+from libquery.typing import MetadataEntry as _MetadataEntry
 from typing_extensions import NotRequired
 
 SourceData = TypedDict(
@@ -24,7 +24,7 @@ SourceData = TypedDict(
 )
 
 
-class MetadataEntry(BaseMetadataEntry):
+class MetadataEntry(_MetadataEntry):
     """The data structure of an entry in the metadata."""
 
     sourceData: SourceData

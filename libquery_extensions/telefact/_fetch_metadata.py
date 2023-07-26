@@ -101,7 +101,7 @@ def _get_publish_date(html_text: str) -> TimePoint:
     }
 
 
-def __get_id_in_source(query: str) -> str:
+def _get_id_in_source(query: str) -> str:
     """Extract idInSource from the query."""
     return query.split("/")[-2]
 
@@ -121,7 +121,7 @@ def _parse(response: Response) -> MetadataEntry:
         raise ValueError(f"Fail to parse url: {response.url}") from e
 
     source = "Telefact"
-    id_in_source = __get_id_in_source(response.url)
+    id_in_source = _get_id_in_source(response.url)
 
     return {
         "uuid": str(uuid5(UUID(int=0), f"{source}/{id_in_source}")),

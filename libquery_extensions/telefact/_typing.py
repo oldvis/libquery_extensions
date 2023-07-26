@@ -5,7 +5,7 @@ The type declarations specific to the `Telefact` data source.
 from typing import List, Literal, TypedDict
 
 from typing_extensions import NotRequired
-from libquery.typing import MetadataEntry as BaseMetadataEntry
+from libquery.typing import MetadataEntry as _MetadataEntry
 
 
 class TimePoint(TypedDict):
@@ -25,7 +25,7 @@ class SourceData(TypedDict):
     languages: List[Literal["eng"]]
 
 
-class MetadataEntry(BaseMetadataEntry):
+class MetadataEntry(_MetadataEntry):
     """The data structure of an entry in the metadata."""
 
     sourceData: SourceData

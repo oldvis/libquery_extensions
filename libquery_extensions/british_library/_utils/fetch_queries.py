@@ -4,7 +4,7 @@ Utility functions for extracting query URLs from a webpage URL.
 
 import json
 import os
-from typing import Any, Callable, List, TypedDict, Set
+from typing import Any, Callable, List, Set, TypedDict
 
 import backoff
 from libquery.utils.jsonl import load_jl

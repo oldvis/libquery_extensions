@@ -4,7 +4,7 @@ The type declarations specific to the `Alabama Maps` data source.
 
 from typing import TypedDict, Union
 
-from libquery.typing import MetadataEntry as BaseMetadataEntry
+from libquery.typing import MetadataEntry as _MetadataEntry
 
 
 class SourceData(TypedDict):
@@ -20,7 +20,7 @@ class SourceData(TypedDict):
     downloadUrl: str
 
 
-class MetadataEntry(BaseMetadataEntry):
+class MetadataEntry(_MetadataEntry):
     """The data structure of an entry in the metadata."""
 
     sourceData: SourceData

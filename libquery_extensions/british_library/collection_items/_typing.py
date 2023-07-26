@@ -4,7 +4,7 @@ The type declarations specific to the `British Library Collection Items` data so
 
 from typing import List, TypedDict
 
-from libquery.typing import MetadataEntry as BaseMetadataEntry
+from libquery.typing import MetadataEntry as _MetadataEntry
 from typing_extensions import NotRequired
 
 
@@ -40,7 +40,7 @@ class SourceData(TypedDict):
     images: NotRequired[List[str]]
 
 
-class MetadataEntry(BaseMetadataEntry):
+class MetadataEntry(_MetadataEntry):
     """The data structure of an entry in the metadata."""
 
     sourceData: SourceData

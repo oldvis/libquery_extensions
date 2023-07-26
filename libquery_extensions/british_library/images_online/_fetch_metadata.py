@@ -13,7 +13,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from .._utils.fetch_metadata import fetch_metadata as base_fetch_metadata
+from .._utils.fetch_metadata import fetch_metadata as _fetch_metadata
 
 
 def _get_image_url(driver: webdriver.Chrome) -> str:
@@ -91,6 +91,4 @@ def _extract_source_data(driver: webdriver.Chrome):
 
 
 def fetch_metadata(query_path: str, metadata_path: str, html_dir: str = None) -> None:
-    return base_fetch_metadata(
-        query_path, metadata_path, _extract_source_data, html_dir
-    )
+    return _fetch_metadata(query_path, metadata_path, _extract_source_data, html_dir)

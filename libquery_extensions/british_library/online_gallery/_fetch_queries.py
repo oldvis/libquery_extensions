@@ -16,7 +16,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 from .._utils.fetch_queries import (
-    fetch_queries as base_fetch_queries,
+    fetch_queries as _fetch_queries,
     Query,
 )
 from ._utils import try_switch_to_replay_iframe
@@ -105,4 +105,4 @@ def _extract_queries(driver: webdriver.Chrome, base_url: str) -> List[Query]:
 
 
 def fetch_queries(base_urls: List[str], query_path: str) -> None:
-    base_fetch_queries(base_urls, query_path, _extract_queries)
+    _fetch_queries(base_urls, query_path, _extract_queries)
