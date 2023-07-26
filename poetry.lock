@@ -394,13 +394,13 @@ files = [
 
 [[package]]
 name = "libquery"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "libquery-0.1.0-py3-none-any.whl", hash = "sha256:c1f722dfc326f05fd29b4dfe7acc2afd2469d08336cfba32f1395f61e115e2b9"},
-    {file = "libquery-0.1.0.tar.gz", hash = "sha256:7dce648353e5cc3c7454208ed2f881d772c98d51088c1b9f4985e201b4f511d0"},
+    {file = "libquery-0.1.1-py3-none-any.whl", hash = "sha256:fd2df46ed352b0e67a5d429d492e71174d05d23da868828881545a6b8dc4f611"},
+    {file = "libquery-0.1.1.tar.gz", hash = "sha256:8278e3d94ee1283753fc4e958f6e39bc57439ada383e92f7c3ef1f8e61f93e76"},
 ]
 
 [package.dependencies]
@@ -852,4 +852,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "e061827a8684dd28462aaa770647b9cd5dab477c6f0560c4bccad039dfc3005e"
+content-hash = "4ad7a05ff418052dfdd5ddaa3385855e5d6083193b5942c4a2230e1fb0351bc2"
