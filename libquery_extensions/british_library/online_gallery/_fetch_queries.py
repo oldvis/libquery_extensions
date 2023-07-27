@@ -28,13 +28,16 @@ def _prefix_href(href: Union[str, None], driver: webdriver.Chrome) -> Union[str,
     add webarchive URL to the href.
     """
 
+    webarchive_url = "https://www.webarchive.org.uk/wayback/archive"
     if href is None:
         return None
+    if href.startswith(webarchive_url):
+        return href
 
-    webarchive_prefix = ""
-    if "https://www.webarchive.org.uk/wayback/archive" in driver.current_url:
-        webarchive_prefix = driver.current_url.split("http:")[0]
-    return f"{webarchive_prefix}{href}"
+    prefix = ""
+    if webarchive_url in driver.current_url:
+        prefix = driver.current_url.split("http:")[0]
+    return f"{prefix}{href}"
 
 
 def _get_next_page_url(driver: webdriver.Chrome) -> Union[str, None]:
