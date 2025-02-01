@@ -1,5 +1,11 @@
 """
 Utility functions for getting metadata from Alabama Maps.
+
+Implementation Notes
+--------------------
+1. Alabama Maps website does not provide search function.
+Thus, the user needs to manually gather the URLs of pages
+to be processed by operating in the navigation page.
 """
 
 import os
@@ -53,11 +59,12 @@ def _parse_download_url(view_url: str, driver: webdriver.Chrome) -> str:
     parse_result = parse.urlparse(download_url)
     query = parse.parse_qs(parse_result.query)
 
-    # Decides the resolution of the returned image
+    # Get a high-resolution image download URL:
+    # - Set the resolution of the returned image.
     query["lev"] = 0
-    # Decides the width of the returned image
+    # - Set the width of the returned image.
     query["wid"] = 5000
-    # Decides the height of the returned image
+    # - Set the height of the returned image.
     query["hei"] = 4000
 
     del query["props"]
